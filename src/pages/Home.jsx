@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Home() {
   return (
     <section className="hero">
@@ -10,8 +12,13 @@ function Home() {
         </p>
 
         <div className="hero-buttons">
-          <button>Start Your Journey</button>
-          <button className="secondary-btn">Book Free Class</button>
+          <Link to="/courses" className="main-btn">
+            Start Your Journey
+          </Link>
+
+          <Link to="/contact" className="secondary-btn">
+            Book Free Class
+          </Link>
         </div>
       </div>
 
