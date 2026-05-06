@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 /* =========================
    GLOBAL ROOT
 ========================= */
@@ -92,11 +95,12 @@ p {
 ========================= */
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 8%;
-  background: #0f172a;
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(12px);
+  background: rgba(15, 23, 42, 0.7);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  z-index: 1000;
 }
 
 .logo {
@@ -127,7 +131,10 @@ nav a {
   width: 100%;
   padding: 120px 8%;
   min-height: 100vh;
-  background: linear-gradient(to right, #f8fafc, #eef2ff);
+
+  background: linear-gradient(135deg, #f8fafc, #e0e7ff);
+
+  
 }
 
 .hero-content {
@@ -157,30 +164,32 @@ nav a {
 .main-btn {
   background: #f59e0b;
   color: white;
-  padding: 16px 30px;
-  border-radius: 12px;
-  font-weight: bold;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .main-btn:hover {
-  background: #d97706;
   transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
 .secondary-btn {
-  background: white;
-  border: 2px solid #111;
-  color: #111;
-  padding: 16px 30px;
-  border-radius: 12px;
-  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.secondary-btn:hover {
+  background: #111;
+  color: white;
 }
 
 .hero-image img {
   width: 100%;
   border-radius: 20px;
   box-shadow: 0 30px 80px rgba(0,0,0,0.15);
+  transition: transform 0.4s ease;
+}
+
+.hero-image img:hover {
+  transform: scale(1.05);
 }
 
 /* =========================
@@ -637,4 +646,8 @@ nav a {
   .hero-content h1 {
     font-size: 28px;
   }
+}
+section {
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
