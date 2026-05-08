@@ -1,3 +1,5 @@
+import Loader from "./components/Loader";
+import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
@@ -9,6 +11,17 @@ import Founder from "./pages/Founder";
 import Contact from "./pages/Contact";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
   return (
     <BrowserRouter>
       <Navbar />

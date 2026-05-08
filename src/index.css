@@ -651,3 +651,69 @@ section {
   padding-top: 80px;
   padding-bottom: 80px;
 }
+/* DARK MODE */
+
+.dark {
+  background: #0f172a;
+  color: white;
+}
+
+.dark .hero,
+.dark .about,
+.dark .founder,
+.dark .courses,
+.dark .contact,
+.dark .why {
+  background: #111827;
+  color: white;
+}
+
+.dark h1,
+.dark h2,
+.dark p,
+.dark a {
+  color: white !important;
+}
+
+.dark .course-card,
+.dark .why-box {
+  background: #1e293b;
+  color: white;
+}
+
+.dark-btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 30px;
+  background: #f59e0b;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: 20px;
+}
+/* LOADER */
+
+.loader {
+  position: fixed;
+  inset: 0;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #ddd;
+  border-top: 6px solid #f59e0b;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
