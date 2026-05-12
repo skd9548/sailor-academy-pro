@@ -14,8 +14,8 @@ function Contact() {
           <div>
             <h3>Contact Information</h3>
             <p>Email: contact@sailoracademy.com</p>
-            <p>Phone: +91 98765 43210</p>
-            <p>Location: Mumbai, India</p>
+            <p>Phone: +91 9548490154</p>
+            <p>Location: Agra, India</p>
           </div>
           <div>
             <h3>What we help with</h3>
