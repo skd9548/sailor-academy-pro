@@ -9,7 +9,7 @@ function Navbar() {
       <div className="navbar">
         <h2 className="logo">Sailor Academy</h2>
 
-        <nav>
+        <nav className="nav-links">
           <button
             className="dark-btn"
             onClick={() => {

@@ -1,44 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #eff3fb;
+  --surface: #ffffff;
+  --surface-strong: #f8fbff;
+  --text: #102a43;
+  --muted: #52667a;
+  --accent: #2563eb;
+  --accent-soft: rgba(37, 99, 235, 0.12);
+  --border: #d8e2ef;
+  --shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+  --radius: 24px;
+}
+
 html {
   scroll-behavior: smooth;
 }
-/* =========================
-   GLOBAL ROOT
-========================= */
-
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #ffffff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-
-  --heading: system-ui, sans-serif;
-  --mono: monospace;
-
-  font: 18px/145% system-ui, sans-serif;
-  letter-spacing: 0.18px;
-  color: var(--text);
-  background: var(--bg);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-@media (max-width: 1024px) {
-  :root {
-    font-size: 16px;
-  }
-}
-
-/* =========================
-   RESET
-========================= */
 
 * {
   margin: 0;
@@ -47,157 +24,92 @@ html {
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: #fff;
+  font-family: 'Inter', system-ui, sans-serif;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
 }
 
-/* =========================
-   ROOT
-========================= */
+body.dark {
+  background: #071020;
+  color: #e2e8f0;
+}
+
+body.dark .navbar {
+  background: rgba(3, 18, 40, 0.88);
+}
+
+body.dark .surface,
+body.dark .section {
+  background: #0b172f;
+}
+
+body.dark .surface-soft,
+body.dark .hero {
+  background: #111f3d;
+}
+
+body.dark .text-muted {
+  color: #cbd5e1;
+}
+
+body.dark .footer {
+  background: #081226;
+}
 
 #root {
-  max-width: 1200px;
   width: 100%;
-  margin: 0 auto;
-  padding: 0 20px;
-  box-sizing: border-box;
 }
 
-/* =========================
-   TYPOGRAPHY
-========================= */
-
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+img {
+  display: block;
+  max-width: 100%;
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.2px;
-  margin: 32px 0;
-}
-
-h2 {
-  font-size: 24px;
-  margin-bottom: 8px;
-}
-
-p {
-  margin: 0;
-  line-height: 1.7;
-}
-
-/* =========================
-   NAVBAR
-========================= */
-
-.navbar {
-  position: sticky;
-  top: 0;
-  backdrop-filter: blur(12px);
-  background: rgba(15, 23, 42, 0.7);
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  z-index: 1000;
-}
-
-.logo {
-  font-size: 30px;
-  font-weight: 700;
-  color: #ffffff;
-}
-
-nav {
-  display: flex;
-  gap: 30px;
-}
-
-nav a {
-  color: white;
+a {
+  color: inherit;
   text-decoration: none;
-  font-weight: 500;
 }
 
-/* =========================
-   HERO
-========================= */
-
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 120px 8%;
-  min-height: 100vh;
-
-  background: linear-gradient(135deg, #f8fafc, #e0e7ff);
-
-  
+button,
+input,
+textarea {
+  font: inherit;
 }
 
-.hero-content {
-  width: 50%;
+button {
+  cursor: pointer;
 }
 
-.hero-content h1 {
-  font-size: 64px;
-  font-weight: 900;
-  color: #0f172a;
-  line-height: 1.2;
-  margin-bottom: 20px;
+.section {
+  padding: 90px 8%;
 }
 
-.hero-content p {
-  font-size: 22px;
-  color: #555;
-  margin-bottom: 40px;
+.section-title {
+  font-size: 2.6rem;
+  line-height: 1.05;
+  margin-bottom: 16px;
+}
+
+.section-subtitle {
+  max-width: 680px;
+  color: var(--muted);
   line-height: 1.8;
 }
 
-.hero-buttons {
-  display: flex;
-  gap: 20px;
+@media (max-width: 980px) {
+  .section {
+    padding: 70px 6%;
+  }
 }
 
-.main-btn {
-  background: #f59e0b;
-  color: white;
-  transition: all 0.3s ease;
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 5%;
+  }
 }
-
-.main-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-
-.secondary-btn {
-  transition: all 0.3s ease;
-}
-
-.secondary-btn:hover {
-  background: #111;
-  color: white;
-}
-
-.hero-image img {
-  width: 100%;
-  border-radius: 20px;
-  box-shadow: 0 30px 80px rgba(0,0,0,0.15);
-  transition: transform 0.4s ease;
-}
-
-.hero-image img:hover {
-  transform: scale(1.05);
-}
-
-/* =========================
-   ABOUT
-========================= */
 
 .about {
-  display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 80px 8%;

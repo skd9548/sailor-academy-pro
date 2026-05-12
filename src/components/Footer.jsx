@@ -3,13 +3,11 @@ function Footer() {
     <footer className="footer">
       <div className="footer-content">
         <h2>Sailor Academy</h2>
-
         <p>
-          Helping students build successful careers in Merchant Navy with real
-          guidance and expert mentorship.
+          We build confident maritime professionals through exam-first coaching,
+          sponsorship guidance, and real-world mentorship.
         </p>
-
-        <p>© 2026 Sailor Academy. All Rights Reserved.</p>
+        <p className="legal">© 2026 Sailor Academy. All Rights Reserved.</p>
       </div>
     </footer>
   );

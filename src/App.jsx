@@ -1,3 +1,4 @@
+import "./App.css";
 import Loader from "./components/Loader";
 import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
