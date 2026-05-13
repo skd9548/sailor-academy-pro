@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
 function Navbar() {
@@ -12,11 +12,11 @@ function Navbar() {
   return (
     <header>
       <div className="navbar">
-        <Link to="/" className="logo">
+        <NavLink to="/" className="logo">
           ⛵ Sailor Academy
-        </Link>
+        </NavLink>
 
-        <button 
+        <button
           className="menu-toggle"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
@@ -27,12 +27,22 @@ function Navbar() {
         </button>
 
         <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
-          <Link to="/" onClick={handleNavClick}>Home</Link>
-          <Link to="/about" onClick={handleNavClick}>About</Link>
-          <Link to="/courses" onClick={handleNavClick}>Courses</Link>
-          <Link to="/founder" onClick={handleNavClick}>Founder</Link>
-          <Link to="/contact" onClick={handleNavClick}>Contact</Link>
-          
+          <NavLink to="/" onClick={handleNavClick} className={({ isActive }) => isActive ? "active" : ""} end>
+            Home
+          </NavLink>
+          <NavLink to="/about" onClick={handleNavClick} className={({ isActive }) => isActive ? "active" : ""}>
+            About
+          </NavLink>
+          <NavLink to="/courses" onClick={handleNavClick} className={({ isActive }) => isActive ? "active" : ""}>
+            Courses
+          </NavLink>
+          <NavLink to="/founder" onClick={handleNavClick} className={({ isActive }) => isActive ? "active" : ""}>
+            Founder
+          </NavLink>
+          <NavLink to="/contact" onClick={handleNavClick} className={({ isActive }) => isActive ? "active" : ""}>
+            Contact
+          </NavLink>
+
           <button
             className="dark-btn"
             onClick={() => {
