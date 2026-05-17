@@ -407,6 +407,20 @@ button {
   background: #f59e0b;
 }
 
+  /* toggle open -> cross */
+  .menu-toggle.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  .menu-toggle.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
 .dark-btn {
   width: 44px;
   height: 44px;
@@ -1096,21 +1110,28 @@ button {
   .nav-links {
     order: 3;
     width: 100%;
-    position: relative;
-    top: auto;
-    left: auto;
-    right: auto;
-    background: rgba(15, 30, 60, 0.95);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background: rgba(15, 30, 60, 0.98);
     flex-direction: column;
     gap: 12px;
-    padding: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    /* show links by default on small screens (no hamburger collapse) */
-    max-height: none;
-    overflow: visible;
-    transition: none;
+    padding: 18px 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.28s ease, padding 0.28s ease;
+    z-index: 1200;
+    box-shadow: 0 14px 32px rgba(2,6,23,0.4);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
   }
-  /* .nav-links.open is no longer needed when links are always visible */
+
+  .nav-links.open {
+    max-height: 520px;
+    padding: 18px 16px 24px 16px;
+  }
 
   .nav-links a {
     padding: 12px 8px;
@@ -1127,9 +1148,10 @@ button {
     display: none;
   }
 
-  /* hide hamburger toggle on small screens to show separate links */
+  /* show hamburger toggle on small screens (opens dropdown) */
   .menu-toggle {
-    display: none;
+    display: flex;
+    order: 2;
   }
 
   .hero {
@@ -1145,6 +1167,58 @@ button {
     flex-direction: column;
     text-align: left;
     padding: 42px 5%;
+  }
+
+  /* Mobile polish: typography, buttons, cards */
+  .logo {
+    font-size: 1.25rem;
+  }
+
+  .page-hero-copy h1,
+  .hero-copy h1,
+  .hero-content h1 {
+    font-size: 1.6rem;
+    line-height: 1.08;
+  }
+
+  .hero-text,
+  .section-subtitle,
+  .hero-content p {
+    font-size: 0.98rem;
+    color: #4b5563;
+  }
+
+  .main-btn,
+  .secondary-btn,
+  .hero-button {
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-size: 1rem;
+  }
+
+  .plan-card,
+  .program-card,
+  .course-card,
+  .why-box,
+  .testimonial-card {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .brand-strip,
+  .course-cards,
+  .program-grid,
+  .why-boxes {
+    gap: 16px;
+  }
+
+  /* increase tap targets */
+  .nav-links a,
+  .nav-links button,
+  .dark-btn {
+    padding: 12px 10px;
+    font-size: 1rem;
   }
 }
 

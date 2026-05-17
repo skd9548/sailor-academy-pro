@@ -17,9 +17,10 @@ function Navbar() {
         </NavLink>
 
         <button
-          className="menu-toggle"
+          className={`menu-toggle ${menuOpen ? "open" : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
+          aria-expanded={menuOpen}
         >
           <span></span>
           <span></span>
@@ -27,19 +28,40 @@ function Navbar() {
         </button>
 
         <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
-          <NavLink to="/" onClick={handleNavClick} className={({ isActive }) => isActive ? "active" : ""} end>
+          <NavLink
+            to="/"
+            onClick={handleNavClick}
+            className={({ isActive }) => (isActive ? "active" : "")}
+            end
+          >
             Home
           </NavLink>
-          <NavLink to="/about" onClick={handleNavClick} className={({ isActive }) => isActive ? "active" : ""}>
+          <NavLink
+            to="/about"
+            onClick={handleNavClick}
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
             About
           </NavLink>
-          <NavLink to="/courses" onClick={handleNavClick} className={({ isActive }) => isActive ? "active" : ""}>
+          <NavLink
+            to="/courses"
+            onClick={handleNavClick}
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
             Courses
           </NavLink>
-          <NavLink to="/founder" onClick={handleNavClick} className={({ isActive }) => isActive ? "active" : ""}>
+          <NavLink
+            to="/founder"
+            onClick={handleNavClick}
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
             Founder
           </NavLink>
-          <NavLink to="/contact" onClick={handleNavClick} className={({ isActive }) => isActive ? "active" : ""}>
+          <NavLink
+            to="/contact"
+            onClick={handleNavClick}
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
             Contact
           </NavLink>
 
