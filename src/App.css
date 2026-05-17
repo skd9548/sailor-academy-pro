@@ -1105,14 +1105,12 @@ button {
     gap: 12px;
     padding: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
+    /* show links by default on small screens (no hamburger collapse) */
+    max-height: none;
+    overflow: visible;
+    transition: none;
   }
-
-  .nav-links.open {
-    max-height: 500px;
-  }
+  /* .nav-links.open is no longer needed when links are always visible */
 
   .nav-links a {
     padding: 12px 8px;
@@ -1129,8 +1127,9 @@ button {
     display: none;
   }
 
+  /* hide hamburger toggle on small screens to show separate links */
   .menu-toggle {
-    display: flex;
+    display: none;
   }
 
   .hero {
